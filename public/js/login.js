@@ -12,11 +12,12 @@ export const login = async (email, password) => {
         password,
       },
     });
+    console.log(result);
     if (result.data.status === 'success') {
       showAlert('success', 'Logged in Successfully!');
       window.setTimeout(() => {
         location.assign('/');
-      }, 1500);
+      }, 1000);
     }
   } catch (err) {
     showAlert('error', err.response.data.message);
