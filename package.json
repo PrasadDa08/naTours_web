@@ -4,7 +4,7 @@
   "description": "Learning Node, express and MongoDB",
   "main": "app.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "start:prod": "NODE_ENV=production nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "ndb server.js",
@@ -33,6 +33,7 @@
     "n": "^9.2.0",
     "node-gyp": "^10.0.1",
     "nodemailer": "^6.9.7",
+    "nodemon": "^3.0.2",
     "parcel-bundler": "^1.12.5",
     "pug": "^3.0.2",
     "serverless-http": "^3.2.0",
@@ -50,7 +51,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
-    "nodemon": "^3.0.2",
     "prettier": "^3.0.3"
   }
 }
