@@ -6,7 +6,7 @@ export const login = async (email, password) => {
   try {
     const result = await axios({
       method: 'POST',
-      url: 'https://natours-web-e50y.onrender.com/login',
+      url: 'http://127.0.0.1:3000/api/v1/users/login',
       data: {
         email,
         password,
@@ -20,6 +20,7 @@ export const login = async (email, password) => {
       }, 1000);
     }
   } catch (err) {
+    console.log(err);
     showAlert('error', err.response.data.message);
   }
 };
