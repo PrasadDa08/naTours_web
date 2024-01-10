@@ -6,8 +6,8 @@ export const updatedSettings = async (data, type) => {
   try {
     const url =
       type === 'password'
-        ? `${process.env.BACKEND_URL}/api/v1/users/updateMyPassword`
-        : `${process.env.BACKEND_URL}/api/v1/users/updateMe`;
+        ? `https://natours-web-e50y.onrender.com/api/v1/users/updateMyPassword`
+        : `https://natours-web-e50y.onrender.com/api/v1/users/updateMe`;
     const result = await axios({
       method: 'PATCH',
       url,
