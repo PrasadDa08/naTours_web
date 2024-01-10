@@ -7464,7 +7464,7 @@ parcelRequire = (function (e, r, t, n) {
       },
       {},
     ],
-    fIt4: [
+    ZCp3: [
       function (require, module, exports) {
         var r = {}.toString;
         module.exports =
@@ -8584,7 +8584,7 @@ parcelRequire = (function (e, r, t, n) {
           return t != t;
         }
       },
-      { 'base64-js': 'QAnv', ieee754: 'O1Qa', isarray: 'fIt4', buffer: 'fe91' },
+      { 'base64-js': 'QAnv', ieee754: 'O1Qa', isarray: 'ZCp3', buffer: 'fe91' },
     ],
     q82J: [
       function (require, module, exports) {
@@ -9041,21 +9041,22 @@ parcelRequire = (function (e, r, t, n) {
             const u = {};
             return (
               t.default.forEachEntry(e, (e, l) => {
-                !(function e(r, u, l, a) {
-                  let s = r[a++];
-                  const i = Number.isFinite(+s),
-                    o = a >= r.length;
+                !(function e(r, u, l, o) {
+                  let a = r[o++];
+                  if ('__proto__' === a) return !0;
+                  const i = Number.isFinite(+a),
+                    s = o >= r.length;
                   return (
-                    (s = !s && t.default.isArray(l) ? l.length : s),
-                    o
-                      ? (t.default.hasOwnProp(l, s)
-                          ? (l[s] = [l[s], u])
-                          : (l[s] = u),
+                    (a = !a && t.default.isArray(l) ? l.length : a),
+                    s
+                      ? (t.default.hasOwnProp(l, a)
+                          ? (l[a] = [l[a], u])
+                          : (l[a] = u),
                         !i)
-                      : ((l[s] && t.default.isObject(l[s])) || (l[s] = []),
-                        e(r, u, l[s], a) &&
-                          t.default.isArray(l[s]) &&
-                          (l[s] = n(l[s])),
+                      : ((l[a] && t.default.isObject(l[a])) || (l[a] = []),
+                        e(r, u, l[a], o) &&
+                          t.default.isArray(l[a]) &&
+                          (l[a] = n(l[a])),
                         !i)
                   );
                 })(r(e), l, u, 0);
@@ -10190,7 +10191,7 @@ parcelRequire = (function (e, r, t, n) {
         'use strict';
         Object.defineProperty(exports, '__esModule', { value: !0 }),
           (exports.VERSION = void 0);
-        const e = (exports.VERSION = '1.6.3');
+        const e = (exports.VERSION = '1.6.5');
       },
       {},
     ],
@@ -10783,7 +10784,7 @@ parcelRequire = (function (e, r, t, n) {
             }
             try {
               h({}, '');
-            } catch (F) {
+            } catch (S) {
               h = function (t, r, e) {
                 return (t[r] = e);
               };
@@ -10791,14 +10792,14 @@ parcelRequire = (function (e, r, t, n) {
             function l(t, r, e, n) {
               var i = r && r.prototype instanceof d ? r : d,
                 a = Object.create(i.prototype),
-                c = new T(n || []);
+                c = new P(n || []);
               return o(a, '_invoke', { value: O(t, e, c) }), a;
             }
             function f(t, r, e) {
               try {
                 return { type: 'normal', arg: t.call(r, e) };
-              } catch (F) {
-                return { type: 'throw', arg: F };
+              } catch (S) {
+                return { type: 'throw', arg: S };
               }
             }
             t.wrap = l;
@@ -10815,7 +10816,7 @@ parcelRequire = (function (e, r, t, n) {
               return this;
             });
             var L = Object.getPrototypeOf,
-              x = L && L(L(P([])));
+              x = L && L(L(T([])));
             x && x !== e && n.call(x, a) && (b = x);
             var E = (w.prototype = d.prototype = Object.create(b));
             function j(t) {
@@ -10864,36 +10865,36 @@ parcelRequire = (function (e, r, t, n) {
                 },
               });
             }
-            function O(t, e, n) {
-              var o = s;
-              return function (i, a) {
-                if (o === y) throw new Error('Generator is already running');
-                if (o === v) {
-                  if ('throw' === i) throw a;
-                  return { value: r, done: !0 };
+            function O(t, r, e) {
+              var n = s;
+              return function (o, i) {
+                if (n === y) throw new Error('Generator is already running');
+                if (n === v) {
+                  if ('throw' === o) throw i;
+                  return F();
                 }
-                for (n.method = i, n.arg = a; ; ) {
-                  var c = n.delegate;
-                  if (c) {
-                    var u = k(c, n);
-                    if (u) {
-                      if (u === g) continue;
-                      return u;
+                for (e.method = o, e.arg = i; ; ) {
+                  var a = e.delegate;
+                  if (a) {
+                    var c = k(a, e);
+                    if (c) {
+                      if (c === g) continue;
+                      return c;
                     }
                   }
-                  if ('next' === n.method) n.sent = n._sent = n.arg;
-                  else if ('throw' === n.method) {
-                    if (o === s) throw ((o = v), n.arg);
-                    n.dispatchException(n.arg);
-                  } else 'return' === n.method && n.abrupt('return', n.arg);
-                  o = y;
-                  var h = f(t, e, n);
-                  if ('normal' === h.type) {
-                    if (((o = n.done ? v : p), h.arg === g)) continue;
-                    return { value: h.arg, done: n.done };
+                  if ('next' === e.method) e.sent = e._sent = e.arg;
+                  else if ('throw' === e.method) {
+                    if (n === s) throw ((n = v), e.arg);
+                    e.dispatchException(e.arg);
+                  } else 'return' === e.method && e.abrupt('return', e.arg);
+                  n = y;
+                  var u = f(t, r, e);
+                  if ('normal' === u.type) {
+                    if (((n = e.done ? v : p), u.arg === g)) continue;
+                    return { value: u.arg, done: e.done };
                   }
-                  'throw' === h.type &&
-                    ((o = v), (n.method = 'throw'), (n.arg = h.arg));
+                  'throw' === u.type &&
+                    ((n = v), (e.method = 'throw'), (e.arg = u.arg));
                 }
               };
             }
@@ -10946,13 +10947,13 @@ parcelRequire = (function (e, r, t, n) {
               var r = t.completion || {};
               (r.type = 'normal'), delete r.arg, (t.completion = r);
             }
-            function T(t) {
+            function P(t) {
               (this.tryEntries = [{ tryLoc: 'root' }]),
                 t.forEach(G, this),
                 this.reset(!0);
             }
-            function P(t) {
-              if (t || '' === t) {
+            function T(t) {
+              if (t) {
                 var e = t[a];
                 if (e) return e.call(t);
                 if ('function' == typeof t.next) return t;
@@ -10967,7 +10968,10 @@ parcelRequire = (function (e, r, t, n) {
                   return (i.next = i);
                 }
               }
-              throw new TypeError(typeof t + ' is not iterable');
+              return { next: F };
+            }
+            function F() {
+              return { value: r, done: !0 };
             }
             return (
               (m.prototype = w),
@@ -11030,9 +11034,9 @@ parcelRequire = (function (e, r, t, n) {
                   }
                 );
               }),
-              (t.values = P),
-              (T.prototype = {
-                constructor: T,
+              (t.values = T),
+              (P.prototype = {
+                constructor: P,
                 reset: function (t) {
                   if (
                     ((this.prev = 0),
@@ -11154,7 +11158,7 @@ parcelRequire = (function (e, r, t, n) {
                 delegateYield: function (t, e, n) {
                   return (
                     (this.delegate = {
-                      iterator: P(t),
+                      iterator: T(t),
                       resultName: e,
                       nextLoc: n,
                     }),
@@ -11799,15 +11803,16 @@ parcelRequire = (function (e, r, t, n) {
                       switch ((e.prev = e.next)) {
                         case 0:
                           return (
-                            (e.prev = 0),
-                            (e.next = 3),
+                            console.log('http://localhost:3000'),
+                            (e.prev = 1),
+                            (e.next = 4),
                             (0, r.default)({
                               method: 'POST',
-                              url: ''.concat(void 0, '/api/v1/users/login'),
+                              url: 'https://natours-web-e50y.onrender.com/api/v1/users/login',
                               data: { email: t, password: o },
                             })
                           );
-                        case 3:
+                        case 4:
                           (i = e.sent),
                             console.log(i),
                             'success' === i.data.status &&
@@ -11818,24 +11823,24 @@ parcelRequire = (function (e, r, t, n) {
                               window.setTimeout(function () {
                                 location.assign('/');
                               }, 1e3)),
-                            (e.next = 12);
+                            (e.next = 13);
                           break;
-                        case 8:
-                          (e.prev = 8),
-                            (e.t0 = e.catch(0)),
+                        case 9:
+                          (e.prev = 9),
+                            (e.t0 = e.catch(1)),
                             console.log(e.t0),
                             (0, s.showAlert)(
                               'error',
                               e.t0.response.data.message,
                             );
-                        case 12:
+                        case 13:
                         case 'end':
                           return e.stop();
                       }
                   },
                   e,
                   null,
-                  [[0, 8]],
+                  [[1, 9]],
                 );
               }),
             );
@@ -11856,7 +11861,7 @@ parcelRequire = (function (e, r, t, n) {
                             (e.next = 3),
                             (0, r.default)({
                               method: 'GET',
-                              url: ''.concat(void 0, '/api/v1/users/logout'),
+                              url: 'https://natours-web-e50y.onrender.com/api/v1/users/logout',
                             })
                           );
                         case 3:
@@ -12059,17 +12064,16 @@ parcelRequire = (function (e, r, t, n) {
     ],
     FxPS: [
       function (require, module, exports) {
-        var define;
-        var t;
+        'use strict';
         Object.defineProperty(exports, '__esModule', { value: !0 }),
           (exports.updatedSettings = void 0);
-        var r = n(require('axios')),
-          e = require('./alerts');
-        function n(t) {
+        var t = e(require('axios')),
+          r = require('./alerts');
+        function e(t) {
           return t && t.__esModule ? t : { default: t };
         }
-        function o(t) {
-          return (o =
+        function n(t) {
+          return (n =
             'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
               ? function (t) {
                   return typeof t;
@@ -12083,15 +12087,14 @@ parcelRequire = (function (e, r, t, n) {
                     : typeof t;
                 })(t);
         }
-        function i() {
-          'use strict';
-          i = function () {
+        function o() {
+          o = function () {
             return r;
           };
           var t,
             r = {},
             e = Object.prototype,
-            n = e.hasOwnProperty,
+            i = e.hasOwnProperty,
             a =
               Object.defineProperty ||
               function (t, r, e) {
@@ -12147,7 +12150,7 @@ parcelRequire = (function (e, r, t, n) {
           });
           var E = Object.getPrototypeOf,
             _ = E && E(E(A([])));
-          _ && _ !== e && n.call(_, u) && (L = _);
+          _ && _ !== e && i.call(_, u) && (L = _);
           var O = (x.prototype = w.prototype = Object.create(L));
           function j(t) {
             ['next', 'throw', 'return'].forEach(function (r) {
@@ -12157,12 +12160,12 @@ parcelRequire = (function (e, r, t, n) {
             });
           }
           function S(t, r) {
-            function e(i, a, c, u) {
-              var s = p(t[i], t, a);
+            function e(o, a, c, u) {
+              var s = p(t[o], t, a);
               if ('throw' !== s.type) {
                 var f = s.arg,
                   l = f.value;
-                return l && 'object' == o(l) && n.call(l, '__await')
+                return l && 'object' == n(l) && i.call(l, '__await')
                   ? r.resolve(l.__await).then(
                       function (t) {
                         e('next', t, c, u);
@@ -12182,15 +12185,15 @@ parcelRequire = (function (e, r, t, n) {
               }
               u(s.arg);
             }
-            var i;
+            var o;
             a(this, '_invoke', {
               value: function (t, n) {
-                function o() {
+                function i() {
                   return new r(function (r, o) {
                     e(t, n, r, o);
                   });
                 }
-                return (i = i ? i.then(o, o) : o());
+                return (o = o ? o.then(i, i) : i());
               },
             });
           }
@@ -12286,17 +12289,17 @@ parcelRequire = (function (e, r, t, n) {
               if (e) return e.call(r);
               if ('function' == typeof r.next) return r;
               if (!isNaN(r.length)) {
-                var i = -1,
+                var o = -1,
                   a = function e() {
-                    for (; ++i < r.length; )
-                      if (n.call(r, i))
-                        return (e.value = r[i]), (e.done = !1), e;
+                    for (; ++o < r.length; )
+                      if (i.call(r, o))
+                        return (e.value = r[o]), (e.done = !1), e;
                     return (e.value = t), (e.done = !0), e;
                   };
                 return (a.next = a);
               }
             }
-            throw new TypeError(o(r) + ' is not iterable');
+            throw new TypeError(n(r) + ' is not iterable');
           }
           return (
             (b.prototype = x),
@@ -12376,7 +12379,7 @@ parcelRequire = (function (e, r, t, n) {
                 )
                   for (var e in this)
                     't' === e.charAt(0) &&
-                      n.call(this, e) &&
+                      i.call(this, e) &&
                       !isNaN(+e.slice(1)) &&
                       (this[e] = t);
               },
@@ -12389,7 +12392,7 @@ parcelRequire = (function (e, r, t, n) {
               dispatchException: function (r) {
                 if (this.done) throw r;
                 var e = this;
-                function o(n, o) {
+                function n(n, o) {
                   return (
                     (c.type = 'throw'),
                     (c.arg = r),
@@ -12398,51 +12401,51 @@ parcelRequire = (function (e, r, t, n) {
                     !!o
                   );
                 }
-                for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-                  var a = this.tryEntries[i],
+                for (var o = this.tryEntries.length - 1; o >= 0; --o) {
+                  var a = this.tryEntries[o],
                     c = a.completion;
-                  if ('root' === a.tryLoc) return o('end');
+                  if ('root' === a.tryLoc) return n('end');
                   if (a.tryLoc <= this.prev) {
-                    var u = n.call(a, 'catchLoc'),
-                      s = n.call(a, 'finallyLoc');
+                    var u = i.call(a, 'catchLoc'),
+                      s = i.call(a, 'finallyLoc');
                     if (u && s) {
-                      if (this.prev < a.catchLoc) return o(a.catchLoc, !0);
-                      if (this.prev < a.finallyLoc) return o(a.finallyLoc);
+                      if (this.prev < a.catchLoc) return n(a.catchLoc, !0);
+                      if (this.prev < a.finallyLoc) return n(a.finallyLoc);
                     } else if (u) {
-                      if (this.prev < a.catchLoc) return o(a.catchLoc, !0);
+                      if (this.prev < a.catchLoc) return n(a.catchLoc, !0);
                     } else {
                       if (!s)
                         throw new Error(
                           'try statement without catch or finally',
                         );
-                      if (this.prev < a.finallyLoc) return o(a.finallyLoc);
+                      if (this.prev < a.finallyLoc) return n(a.finallyLoc);
                     }
                   }
                 }
               },
               abrupt: function (t, r) {
                 for (var e = this.tryEntries.length - 1; e >= 0; --e) {
-                  var o = this.tryEntries[e];
+                  var n = this.tryEntries[e];
                   if (
-                    o.tryLoc <= this.prev &&
-                    n.call(o, 'finallyLoc') &&
-                    this.prev < o.finallyLoc
+                    n.tryLoc <= this.prev &&
+                    i.call(n, 'finallyLoc') &&
+                    this.prev < n.finallyLoc
                   ) {
-                    var i = o;
+                    var o = n;
                     break;
                   }
                 }
-                i &&
+                o &&
                   ('break' === t || 'continue' === t) &&
-                  i.tryLoc <= r &&
-                  r <= i.finallyLoc &&
-                  (i = null);
-                var a = i ? i.completion : {};
+                  o.tryLoc <= r &&
+                  r <= o.finallyLoc &&
+                  (o = null);
+                var a = o ? o.completion : {};
                 return (
                   (a.type = t),
                   (a.arg = r),
-                  i
-                    ? ((this.method = 'next'), (this.next = i.finallyLoc), m)
+                  o
+                    ? ((this.method = 'next'), (this.next = o.finallyLoc), m)
                     : this.complete(a)
                 );
               },
@@ -12495,7 +12498,7 @@ parcelRequire = (function (e, r, t, n) {
             r
           );
         }
-        function a(t, r, e, n, o, i, a) {
+        function i(t, r, e, n, o, i, a) {
           try {
             var c = t[i](a),
               u = c.value;
@@ -12504,68 +12507,66 @@ parcelRequire = (function (e, r, t, n) {
           }
           c.done ? r(u) : Promise.resolve(u).then(n, o);
         }
-        function c(t) {
+        function a(t) {
           return function () {
             var r = this,
               e = arguments;
             return new Promise(function (n, o) {
-              var i = t.apply(r, e);
+              var a = t.apply(r, e);
               function c(t) {
-                a(i, n, o, c, u, 'next', t);
+                i(a, n, o, c, u, 'next', t);
               }
               function u(t) {
-                a(i, n, o, c, u, 'throw', t);
+                i(a, n, o, c, u, 'throw', t);
               }
               c(void 0);
             });
           };
         }
-        var u = (exports.updatedSettings = (function () {
-          var t = c(
-            i().mark(function t(n, o) {
+        var c = (exports.updatedSettings = (function () {
+          var e = a(
+            o().mark(function e(n, i) {
               var a;
-              return i().wrap(
-                function (t) {
+              return o().wrap(
+                function (e) {
                   for (;;)
-                    switch ((t.prev = t.next)) {
+                    switch ((e.prev = e.next)) {
                       case 0:
                         return (
-                          (t.prev = 0),
-                          (a = ''.concat(
-                            void 0,
-                            'password' === o
-                              ? '/api/v1/users/updateMyPassword'
-                              : '/api/v1/users/updateMe',
-                          )),
-                          (t.next = 4),
-                          (0, r.default)({ method: 'PATCH', url: a, data: n })
+                          (e.prev = 0),
+                          (a =
+                            'password' === i
+                              ? 'https://natours-web-e50y.onrender.com/api/v1/users/updateMyPassword'
+                              : 'https://natours-web-e50y.onrender.com/api/v1/users/updateMe'),
+                          (e.next = 4),
+                          (0, t.default)({ method: 'PATCH', url: a, data: n })
                         );
                       case 4:
-                        'success' === t.sent.data.status &&
-                          (0, e.showAlert)(
+                        'success' === e.sent.data.status &&
+                          (0, r.showAlert)(
                             'success',
-                            ''.concat(o.toUpperCase(), ' Updated Sucessfully'),
+                            ''.concat(i.toUpperCase(), ' Updated Sucessfully'),
                           ),
-                          (t.next = 12);
+                          (e.next = 12);
                         break;
                       case 8:
-                        (t.prev = 8),
-                          (t.t0 = t.catch(0)),
-                          console.log(t.t0),
-                          (0, e.showAlert)('error', t.t0.response.data.message);
+                        (e.prev = 8),
+                          (e.t0 = e.catch(0)),
+                          console.log(e.t0),
+                          (0, r.showAlert)('error', e.t0.response.data.message);
                       case 12:
                       case 'end':
-                        return t.stop();
+                        return e.stop();
                     }
                 },
-                t,
+                e,
                 null,
                 [[0, 8]],
               );
             }),
           );
-          return function (r, e) {
-            return t.apply(this, arguments);
+          return function (t, r) {
+            return e.apply(this, arguments);
           };
         })());
       },
@@ -12573,17 +12574,16 @@ parcelRequire = (function (e, r, t, n) {
     ],
     Uj2q: [
       function (require, module, exports) {
-        var define;
-        var t;
+        'use strict';
         Object.defineProperty(exports, '__esModule', { value: !0 }),
           (exports.bookTour = void 0);
-        var r = n(require('axios')),
-          e = require('./alerts');
-        function n(t) {
+        var t = e(require('axios')),
+          r = require('./alerts');
+        function e(t) {
           return t && t.__esModule ? t : { default: t };
         }
-        function o(t) {
-          return (o =
+        function n(t) {
+          return (n =
             'function' == typeof Symbol && 'symbol' == typeof Symbol.iterator
               ? function (t) {
                   return typeof t;
@@ -12597,15 +12597,14 @@ parcelRequire = (function (e, r, t, n) {
                     : typeof t;
                 })(t);
         }
-        function i() {
-          'use strict';
-          i = function () {
+        function o() {
+          o = function () {
             return r;
           };
           var t,
             r = {},
             e = Object.prototype,
-            n = e.hasOwnProperty,
+            i = e.hasOwnProperty,
             a =
               Object.defineProperty ||
               function (t, r, e) {
@@ -12661,7 +12660,7 @@ parcelRequire = (function (e, r, t, n) {
           });
           var E = Object.getPrototypeOf,
             _ = E && E(E(A([])));
-          _ && _ !== e && n.call(_, u) && (L = _);
+          _ && _ !== e && i.call(_, u) && (L = _);
           var k = (x.prototype = w.prototype = Object.create(L));
           function O(t) {
             ['next', 'throw', 'return'].forEach(function (r) {
@@ -12671,12 +12670,12 @@ parcelRequire = (function (e, r, t, n) {
             });
           }
           function j(t, r) {
-            function e(i, a, c, u) {
-              var s = p(t[i], t, a);
+            function e(o, a, c, u) {
+              var s = p(t[o], t, a);
               if ('throw' !== s.type) {
                 var f = s.arg,
                   l = f.value;
-                return l && 'object' == o(l) && n.call(l, '__await')
+                return l && 'object' == n(l) && i.call(l, '__await')
                   ? r.resolve(l.__await).then(
                       function (t) {
                         e('next', t, c, u);
@@ -12696,15 +12695,15 @@ parcelRequire = (function (e, r, t, n) {
               }
               u(s.arg);
             }
-            var i;
+            var o;
             a(this, '_invoke', {
               value: function (t, n) {
-                function o() {
+                function i() {
                   return new r(function (r, o) {
                     e(t, n, r, o);
                   });
                 }
-                return (i = i ? i.then(o, o) : o());
+                return (o = o ? o.then(i, i) : i());
               },
             });
           }
@@ -12800,17 +12799,17 @@ parcelRequire = (function (e, r, t, n) {
               if (e) return e.call(r);
               if ('function' == typeof r.next) return r;
               if (!isNaN(r.length)) {
-                var i = -1,
+                var o = -1,
                   a = function e() {
-                    for (; ++i < r.length; )
-                      if (n.call(r, i))
-                        return (e.value = r[i]), (e.done = !1), e;
+                    for (; ++o < r.length; )
+                      if (i.call(r, o))
+                        return (e.value = r[o]), (e.done = !1), e;
                     return (e.value = t), (e.done = !0), e;
                   };
                 return (a.next = a);
               }
             }
-            throw new TypeError(o(r) + ' is not iterable');
+            throw new TypeError(n(r) + ' is not iterable');
           }
           return (
             (b.prototype = x),
@@ -12890,7 +12889,7 @@ parcelRequire = (function (e, r, t, n) {
                 )
                   for (var e in this)
                     't' === e.charAt(0) &&
-                      n.call(this, e) &&
+                      i.call(this, e) &&
                       !isNaN(+e.slice(1)) &&
                       (this[e] = t);
               },
@@ -12903,7 +12902,7 @@ parcelRequire = (function (e, r, t, n) {
               dispatchException: function (r) {
                 if (this.done) throw r;
                 var e = this;
-                function o(n, o) {
+                function n(n, o) {
                   return (
                     (c.type = 'throw'),
                     (c.arg = r),
@@ -12912,51 +12911,51 @@ parcelRequire = (function (e, r, t, n) {
                     !!o
                   );
                 }
-                for (var i = this.tryEntries.length - 1; i >= 0; --i) {
-                  var a = this.tryEntries[i],
+                for (var o = this.tryEntries.length - 1; o >= 0; --o) {
+                  var a = this.tryEntries[o],
                     c = a.completion;
-                  if ('root' === a.tryLoc) return o('end');
+                  if ('root' === a.tryLoc) return n('end');
                   if (a.tryLoc <= this.prev) {
-                    var u = n.call(a, 'catchLoc'),
-                      s = n.call(a, 'finallyLoc');
+                    var u = i.call(a, 'catchLoc'),
+                      s = i.call(a, 'finallyLoc');
                     if (u && s) {
-                      if (this.prev < a.catchLoc) return o(a.catchLoc, !0);
-                      if (this.prev < a.finallyLoc) return o(a.finallyLoc);
+                      if (this.prev < a.catchLoc) return n(a.catchLoc, !0);
+                      if (this.prev < a.finallyLoc) return n(a.finallyLoc);
                     } else if (u) {
-                      if (this.prev < a.catchLoc) return o(a.catchLoc, !0);
+                      if (this.prev < a.catchLoc) return n(a.catchLoc, !0);
                     } else {
                       if (!s)
                         throw new Error(
                           'try statement without catch or finally',
                         );
-                      if (this.prev < a.finallyLoc) return o(a.finallyLoc);
+                      if (this.prev < a.finallyLoc) return n(a.finallyLoc);
                     }
                   }
                 }
               },
               abrupt: function (t, r) {
                 for (var e = this.tryEntries.length - 1; e >= 0; --e) {
-                  var o = this.tryEntries[e];
+                  var n = this.tryEntries[e];
                   if (
-                    o.tryLoc <= this.prev &&
-                    n.call(o, 'finallyLoc') &&
-                    this.prev < o.finallyLoc
+                    n.tryLoc <= this.prev &&
+                    i.call(n, 'finallyLoc') &&
+                    this.prev < n.finallyLoc
                   ) {
-                    var i = o;
+                    var o = n;
                     break;
                   }
                 }
-                i &&
+                o &&
                   ('break' === t || 'continue' === t) &&
-                  i.tryLoc <= r &&
-                  r <= i.finallyLoc &&
-                  (i = null);
-                var a = i ? i.completion : {};
+                  o.tryLoc <= r &&
+                  r <= o.finallyLoc &&
+                  (o = null);
+                var a = o ? o.completion : {};
                 return (
                   (a.type = t),
                   (a.arg = r),
-                  i
-                    ? ((this.method = 'next'), (this.next = i.finallyLoc), m)
+                  o
+                    ? ((this.method = 'next'), (this.next = o.finallyLoc), m)
                     : this.complete(a)
                 );
               },
@@ -13009,7 +13008,7 @@ parcelRequire = (function (e, r, t, n) {
             r
           );
         }
-        function a(t, r, e, n, o, i, a) {
+        function i(t, r, e, n, o, i, a) {
           try {
             var c = t[i](a),
               u = c.value;
@@ -13018,76 +13017,73 @@ parcelRequire = (function (e, r, t, n) {
           }
           c.done ? r(u) : Promise.resolve(u).then(n, o);
         }
-        function c(t) {
+        function a(t) {
           return function () {
             var r = this,
               e = arguments;
             return new Promise(function (n, o) {
-              var i = t.apply(r, e);
+              var a = t.apply(r, e);
               function c(t) {
-                a(i, n, o, c, u, 'next', t);
+                i(a, n, o, c, u, 'next', t);
               }
               function u(t) {
-                a(i, n, o, c, u, 'throw', t);
+                i(a, n, o, c, u, 'throw', t);
               }
               c(void 0);
             });
           };
         }
-        var u = Stripe(
+        var c = Stripe(
             'pk_test_51OUQyqSBrsofVlVBA3OHLAq9RUspnR6E8eEykaQWeGfy39vN7uHcRJ1Ktt1WHSWoeFWbdENxRqG8scbtHi6AIQIL00ylhrwX0m',
           ),
-          s = (exports.bookTour = (function () {
-            var t = c(
-              i().mark(function t(n) {
-                var o;
-                return i().wrap(
-                  function (t) {
+          u = (exports.bookTour = (function () {
+            var e = a(
+              o().mark(function e(n) {
+                var i;
+                return o().wrap(
+                  function (e) {
                     for (;;)
-                      switch ((t.prev = t.next)) {
+                      switch ((e.prev = e.next)) {
                         case 0:
                           return (
-                            (t.prev = 0),
-                            (t.next = 3),
-                            (0, r.default)(
-                              ''
-                                .concat(
-                                  void 0,
-                                  '/api/v1/bookings/checkout-session/',
-                                )
-                                .concat(n),
+                            (e.prev = 0),
+                            (e.next = 3),
+                            (0, t.default)(
+                              'https://natours-web-e50y.onrender.com/api/v1/bookings/checkout-session/'.concat(
+                                n,
+                              ),
                             )
                           );
                         case 3:
                           return (
-                            (o = t.sent),
-                            console.log(o),
-                            (t.next = 7),
-                            u.redirectToCheckout({
-                              sessionId: o.data.session.id,
+                            (i = e.sent),
+                            console.log(i),
+                            (e.next = 7),
+                            c.redirectToCheckout({
+                              sessionId: i.data.session.id,
                             })
                           );
                         case 7:
-                          t.next = 13;
+                          e.next = 13;
                           break;
                         case 9:
-                          (t.prev = 9),
-                            (t.t0 = t.catch(0)),
-                            console.log(t.t0),
-                            (0, e.showAlert)('error', t.t0);
+                          (e.prev = 9),
+                            (e.t0 = e.catch(0)),
+                            console.log(e.t0),
+                            (0, r.showAlert)('error', e.t0);
                         case 13:
                         case 'end':
-                          return t.stop();
+                          return e.stop();
                       }
                   },
-                  t,
+                  e,
                   null,
                   [[0, 9]],
                 );
               }),
             );
-            return function (r) {
-              return t.apply(this, arguments);
+            return function (t) {
+              return e.apply(this, arguments);
             };
           })());
       },
